@@ -2,7 +2,8 @@
 % Please edit documentation in R/ind.stats.R
 \name{ind.stats}
 \alias{ind.stats}
-\title{Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.}
+\title{Statistics for data with k independent variables
+Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.}
 \usage{
 ind.stats(
   i,
@@ -16,10 +17,38 @@ ind.stats(
 )
 }
 \arguments{
-\item{data}{data}
+\item{i}{Column number(s) of variable(s) for analysis}
 
-\item{group}{group}
+\item{j}{Column number of group}
+
+\item{df}{Data frame}
+
+\item{latex}{LaTeX output}
+
+\item{test}{Choose statistical test to be performed from "parametric" or "non-parametric". For parametric, t.test or oneway.test is called for 2 groups or 3 groups, respectively. For non-parametric, wilcox.test or kruskal.test is called for 2 groups or 3 groups, respectively. No statistical test is performed as default.}
+
+\item{var.equal}{Used for augument var.equal in t.test and oneway.test. By default (NULL), this is set as TRUE if P-value for equal variance test is greater than 0.2, otherwise set as FALSE. This can be know by checking t-value (F-value). If freedum is less than 1, var.equal is set as FALSE. FALSE is a default for t.test.}
+
+\item{digits}{Number of digits under dicimal point for mean and standard deviation}
+
+\item{output}{Output connection. Console as default.}
 }
 \description{
+Statistics for data with k independent variables
 Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.
 }
+\examples{
+Sex <- c(1,1,1,2,1,2,1,2,1,2,2,2,1,1,2,1,2,2,2,2,1,2,1,1,1,1,2,2,2,2)
+BS1 <- c(101.3,101.8,122.6,114.4,89.7,83.4,93.2,99.6,127.5,104.7,84.2,90.6,90,97.6,97.4,92.8,103.4,101.2,87.8,95.5,89,94.3,69.9,79.4,105.7,95.2,113.7,106.8,112.1,91.7)
+BS2 <- c(135.8,165.7,178.9,155.8,143,123.7,151.3,108.8,101.6,156.1,173.7,122.6,102.2,176.7,125,172.8,146.5,159,148,140.5,171.8,121.2,114.9,160,98.1,133.5,86.5,148.9,206.1,163)
+df <- as.data.frame(cbind(Sex, BS1, BS2))
+df[,1] <- factor(df[,1], levels=1:2, labels=c("M", "F"))
+colnames(df) <- c("Sex", "Blood Sugar before meal", "Blood Sugar after meal")
+ind.stats(2:3, 1, df, test="parametric")
+ind.stats(2:3, 1, df, test="non-parametric")
+
+}
+\author{
+Shoji F. Nakayama
+}
+\keyword{nonparametric}

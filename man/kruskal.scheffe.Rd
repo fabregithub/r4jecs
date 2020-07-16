@@ -2,7 +2,8 @@
 % Please edit documentation in R/kruskal.scheffe.R
 \name{kruskal.scheffe}
 \alias{kruskal.scheffe}
-\title{Extended Kruskal-Wallis test followed by Scheffe's test}
+\title{Extended Kruskal-Wallis test followed by Scheffe's test
+R has kruskal.test originaly. This function performs Kruskal-Wallis test followed by Scheffe's test.}
 \usage{
 kruskal.scheffe(data, group = NULL)
 }
@@ -13,4 +14,30 @@ kruskal.scheffe(data, group = NULL)
 }
 \description{
 Extended Kruskal-Wallis test followed by Scheffe's test
+R has kruskal.test originaly. This function performs Kruskal-Wallis test followed by Scheffe's test.
 }
+\note{
+R has kruskal.test function. Compare with it.
+}
+\examples{
+data <- c(
+3.42, 3.84, 3.96, 3.76,
+3.17, 3.63, 3.47, 3.44, 3.39,
+3.64, 3.72, 3.91
+)
+group <- rep(c("H", "M", "L"), c(4, 5, 3))
+kruskal.scheffe(data, group)
+## List
+x1 <- c(3.42, 3.84, 3.96, 3.76)
+x2 <- c(3.17, 3.63, 3.47, 3.44, 3.39)
+x3 <- c(3.64, 3.72, 3.91)
+kruskal.scheffe(list(x1,x2,x3))
+
+}
+\seealso{
+kruskal.test
+}
+\author{
+Shoji F. Nakayama
+}
+\keyword{nonparametric}

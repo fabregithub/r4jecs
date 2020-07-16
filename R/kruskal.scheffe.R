@@ -1,8 +1,30 @@
-# Extended Kruskal-Wallis test followed by Scheffe's test
 #' Extended Kruskal-Wallis test followed by Scheffe's test
+#' R has kruskal.test originaly. This function performs Kruskal-Wallis test followed by Scheffe's test.
+#'
+#' @author Shoji F. Nakayama
 #'
 #' @param data data
 #' @param group group
+#'
+#' @examples
+#' data <- c(
+#' 3.42, 3.84, 3.96, 3.76,
+#' 3.17, 3.63, 3.47, 3.44, 3.39,
+#' 3.64, 3.72, 3.91
+#' )
+#' group <- rep(c("H", "M", "L"), c(4, 5, 3))
+#' kruskal.scheffe(data, group)
+#' ## List
+#' x1 <- c(3.42, 3.84, 3.96, 3.76)
+#' x2 <- c(3.17, 3.63, 3.47, 3.44, 3.39)
+#' x3 <- c(3.64, 3.72, 3.91)
+#' kruskal.scheffe(list(x1,x2,x3))
+#'
+#' @keywords nonparametric
+#'
+#' @note R has kruskal.test function. Compare with it.
+#'
+#' @seealso kruskal.test
 #'
 #' @export
 #'
