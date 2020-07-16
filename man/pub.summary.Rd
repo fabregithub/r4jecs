@@ -2,7 +2,8 @@
 % Please edit documentation in R/pub.summary.R
 \name{pub.summary}
 \alias{pub.summary}
-\title{Generating summary statistics for publication}
+\title{Generate summary statistics for publication
+Generating summary statistics for publication}
 \usage{
 pub.summary(data)
 }
@@ -10,5 +11,9 @@ pub.summary(data)
 \item{data}{data}
 }
 \description{
+Generate summary statistics for publication
 Generating summary statistics for publication
+}
+\author{
+Shoji F. Nakayama
 }

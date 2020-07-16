@@ -2,7 +2,8 @@
 % Please edit documentation in R/Summary.R
 \name{Summary}
 \alias{Summary}
-\title{Calculating summary statistics}
+\title{Calculation of summary statistics
+Calculating summary statistics}
 \usage{
 Summary(data)
 }
@@ -10,5 +11,9 @@ Summary(data)
 \item{data}{data}
 }
 \description{
+Calculation of summary statistics
 Calculating summary statistics
+}
+\author{
+Yukiko Nishihama
 }

@@ -1,5 +1,7 @@
-# Generate summary statistics for publication
+#' Generate summary statistics for publication
 #' Generating summary statistics for publication
+#'
+#' @author Shoji F. Nakayama
 #'
 #' @param data data
 #' @export

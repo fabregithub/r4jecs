@@ -1,5 +1,7 @@
-# NADA summary
+#' NADA summary
 #' Calculating NADA summary statistics
+#'
+#' @author Shoji F. Nakayama
 #'
 #' @param data data
 #' @param cen indicator for censor

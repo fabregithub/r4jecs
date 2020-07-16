@@ -1,5 +1,7 @@
-# Calculation of cummary statistics
+#' Calculation of summary statistics
 #' Calculating summary statistics
+#'
+#' @author Yukiko Nishihama
 #'
 #' @param data data
 #'
