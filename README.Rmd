@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # r4jecs
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/fabregithub/r4jecs.svg?branch=master)](https://travis-ci.com/fabregithub/r4jecs)
 <!-- badges: end -->
 
 The goal of r4jecs is to ...
