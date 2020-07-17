@@ -9,7 +9,7 @@
 
 
 ## Summary statistics for publication
-pub.summary <- function (data) {
+pub.sum <- function (data) {
   if (is.numeric(data)) {
     res <- paste(round(median(data), 2), ' (', round(quantile(data, 0.25)[[1]], 2), ', ', round(quantile(data, 0.75)[[1]], 2), ')', sep = '')
     res <- data.frame(Summary = res)

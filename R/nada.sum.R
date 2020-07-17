@@ -12,7 +12,7 @@
 #'
 #'
 
-nada.summary <- function (data, cen) {
+nada.sum <- function (data, cen) {
   cf.res <- cenfit(data, cen)
   cf.summary <- censummary(data, cen)
   l.cf.res <- cenfit(log10(data), cen)

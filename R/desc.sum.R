@@ -10,7 +10,7 @@
 #'
 
 
-desc.summary <- function (data) {
+desc.sum <- function (data) {
   des <- describe(data)
   l <- log10(x)
   gm <- 10^mean(l)
