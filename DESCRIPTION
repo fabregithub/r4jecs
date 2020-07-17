@@ -16,4 +16,5 @@ Imports:
     ranger,
     doParallel,
     foreach,
+    parallel,
     psych
