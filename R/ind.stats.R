@@ -6,8 +6,8 @@
 #' @param df Data frame
 #' @param latex LaTeX output
 #' @param test Choose statistical test to be performed from "parametric" or "non-parametric". For parametric, t.test or oneway.test is called for 2 groups or 3 groups, respectively. For non-parametric, wilcox.test or kruskal.test is called for 2 groups or 3 groups, respectively. No statistical test is performed as default.
-#' @param var.equal Used for augument var.equal in t.test and oneway.test. By default (NULL), this is set as TRUE if P-value for equal variance test is greater than 0.2, otherwise set as FALSE. This can be know by checking t-value (F-value). If freedum is less than 1, var.equal is set as FALSE. FALSE is a default for t.test.
-#' @param digits Number of digits under dicimal point for mean and standard deviation
+#' @param var.equal Used for augment var.equal in t.test and oneway.test. By default (NULL), this is set as TRUE if P-value for equal variance test is greater than 0.2, otherwise set as FALSE. This can be know by checking t-value (F-value). If freedom is less than 1, var.equal is set as FALSE. FALSE is a default for t.test.
+#' @param digits Number of digits under decimal point for mean and standard deviation
 #' @param output Output connection. Console as default.
 #'
 #' @examples

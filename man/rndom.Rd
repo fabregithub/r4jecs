@@ -3,7 +3,7 @@
 \name{rndom}
 \alias{rndom}
 \title{Random forest regression model
-Random forest regreesion model with 10-fold cross validation and external validation}
+Random forest regression model with 10-fold cross validation and external validation}
 \usage{
 rndom(data, val, dp, Formula, N)
 }
@@ -20,7 +20,7 @@ rndom(data, val, dp, Formula, N)
 }
 \description{
 Random forest regression model
-Random forest regreesion model with 10-fold cross validation and external validation
+Random forest regression model with 10-fold cross validation and external validation
 }
 \author{
 Jung Chau-Ren
