@@ -20,6 +20,9 @@
 #' x3 <- c(3.64, 3.72, 3.91)
 #' kruskal.scheffe(list(x1,x2,x3))
 #'
+#' @importFrom stats complete.cases pchisq
+#' @importFrom utils combn
+#'
 #' @keywords nonparametric
 #'
 #' @note R has kruskal.test function. Compare with it.

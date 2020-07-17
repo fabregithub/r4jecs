@@ -4,6 +4,9 @@
 #' @author Shoji F. Nakayama
 #'
 #' @param data data
+#'
+#' @importFrom tibble rownames_to_column
+#'
 #' @export
 #'
 

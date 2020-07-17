@@ -10,9 +10,8 @@
 #' @param N number of trees
 #'
 #' @importFrom ranger ranger
-#' @importFrom parallel detectCores
-#' @importFrom parallel makeCluster
-#' @importFrom parallel stopCluster
+#' @importFrom parallel detectCores makeCluster stopCluster
+#' @importFrom utils tail
 #' @importFrom foreach foreach
 #'
 #' @export

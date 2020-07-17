@@ -10,12 +10,15 @@
 #' @param digits Number of digits under decimal point for mean and standard deviation
 #' @param output Output connection. Console as default.
 #'
+#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test complete.cases
+#'
 #' @examples
 #' Sex <- c(1,1,1,2,1,2,1,2,1,2,2,2,1,1,2,1,2,2,2,2,1,2,1,1,1,1,2,2,2,2)
 #' BS1 <- c(101.3,101.8,122.6,114.4,89.7,83.4,93.2,99.6,127.5,104.7,84.2,90.6,90,97.6,97.4,92.8,
 #'     103.4,101.2,87.8,95.5,89,94.3,69.9,79.4,105.7,95.2,113.7,106.8,112.1,91.7)
 #' BS2 <- c(135.8,165.7,178.9,155.8,143,123.7,151.3,108.8,101.6,156.1,173.7,
-#'     122.6,102.2,176.7,125,172.8,146.5,159,148,140.5,171.8,121.2,114.9,160,98.1,133.5,86.5,148.9,206.1,163)
+#'     122.6,102.2,176.7,125,172.8,146.5,159,148,140.5,171.8,121.2,114.9,160,
+#'     98.1,133.5,86.5,148.9,206.1,163)
 #' df <- as.data.frame(cbind(Sex, BS1, BS2))
 #' df[,1] <- factor(df[,1], levels=1:2, labels=c("M", "F"))
 #' colnames(df) <- c("Sex", "Blood Sugar before meal", "Blood Sugar after meal")

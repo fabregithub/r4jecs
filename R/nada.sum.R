@@ -6,8 +6,8 @@
 #' @param data data
 #' @param cen indicator for censor
 #'
-#' @importFrom NADA cenfit
-#' @importFrom NADA censummary
+#' @importFrom NADA cenfit censummary
+#'
 #' @export
 #'
 #'
