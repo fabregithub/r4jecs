@@ -18,8 +18,9 @@ Suggests:
 Imports:
     NADA,
     ranger,
-    doParallel,
     foreach,
     parallel,
-    psych
+    psych,
+    stats,
+    utils
 Language: en-GB
