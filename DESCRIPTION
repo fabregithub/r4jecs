@@ -1,13 +1,13 @@
 Package: r4jecs
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Collection of Functions for Japan Environment and Children's Study
 Version: 0.1.0
 Authors@R: c(
     person(given = "Shoji", family = "Nakayama", role = c("aut", "cre"), email = "fabre@nies.go.jp"),
     person(given = "Yukiko", family = "Nishihama", role = c("ctb")),
     person(given = "Chau-Ren", family = "Jung", role = c("ctb"))
     )
-Description: This is a package used in JECS project.
+Description: This is a package used in the Japan Environment and Children's Study.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
