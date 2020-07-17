@@ -4,6 +4,6 @@
 #'
 #' @name r4jecs
 #' @docType package
-#' @import  NADA ranger doParallel foreach psych parallel
+#' @import  NADA ranger foreach psych parallel tibble doParallel
 #'
 NULL

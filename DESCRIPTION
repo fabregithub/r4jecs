@@ -21,6 +21,6 @@ Imports:
     foreach,
     parallel,
     psych,
-    stats,
-    utils
+    tibble,
+    doParallel
 Language: en-GB

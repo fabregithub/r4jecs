@@ -13,6 +13,7 @@
 #' @importFrom parallel detectCores makeCluster stopCluster
 #' @importFrom utils tail
 #' @importFrom foreach foreach
+#' @importFrom doParallel registerDoParallel
 #'
 #' @export
 #'
