@@ -1,5 +1,6 @@
 #' Calculation of summary statistics
-#' Calculating summary statistics
+#'
+#' This is a function to generate descriptive statistics of a variable.
 #'
 #' @author Yukiko Nishihama
 #'

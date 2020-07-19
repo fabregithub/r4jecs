@@ -2,8 +2,7 @@
 % Please edit documentation in R/pub.sum.R
 \name{pub.sum}
 \alias{pub.sum}
-\title{Generate summary statistics for publication
-Generating summary statistics for publication}
+\title{Generate summary statistics for publication}
 \usage{
 pub.sum(data)
 }
@@ -11,8 +10,7 @@ pub.sum(data)
 \item{data}{data}
 }
 \description{
-Generate summary statistics for publication
-Generating summary statistics for publication
+This is a function to generate publication ready summary statistics
 }
 \author{
 Shoji F. Nakayama

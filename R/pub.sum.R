@@ -1,5 +1,6 @@
 #' Generate summary statistics for publication
-#' Generating summary statistics for publication
+#'
+#' This is a function to generate publication ready summary statistics
 #'
 #' @author Shoji F. Nakayama
 #'

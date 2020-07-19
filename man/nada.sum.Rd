@@ -2,8 +2,7 @@
 % Please edit documentation in R/nada.sum.R
 \name{nada.sum}
 \alias{nada.sum}
-\title{NADA summary
-Calculating NADA summary statistics}
+\title{NADA summary}
 \usage{
 nada.sum(data, cen)
 }
@@ -13,8 +12,7 @@ nada.sum(data, cen)
 \item{cen}{indicator for censor}
 }
 \description{
-NADA summary
-Calculating NADA summary statistics
+This is a function to calculate NADA summary statistics
 }
 \author{
 Shoji F. Nakayama

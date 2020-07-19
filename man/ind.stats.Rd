@@ -2,8 +2,7 @@
 % Please edit documentation in R/ind.stats.R
 \name{ind.stats}
 \alias{ind.stats}
-\title{Statistics for data with k independent variables
-Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.}
+\title{Statistics for data with k independent variables}
 \usage{
 ind.stats(
   i,
@@ -34,7 +33,6 @@ ind.stats(
 \item{output}{Output connection. Console as default.}
 }
 \description{
-Statistics for data with k independent variables
 Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.
 }
 \examples{

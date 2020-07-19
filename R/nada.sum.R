@@ -1,5 +1,6 @@
 #' NADA summary
-#' Calculating NADA summary statistics
+#'
+#' This is a function to calculate NADA summary statistics
 #'
 #' @author Shoji F. Nakayama
 #'

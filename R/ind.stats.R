@@ -1,4 +1,5 @@
 #' Statistics for data with k independent variables
+#'
 #' Compute mean and standard deviation for each group in data with k independent variables. Statistical analysis may be applied for data.
 #'
 #' @param i Column number(s) of variable(s) for analysis

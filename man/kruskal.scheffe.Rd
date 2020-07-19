@@ -2,8 +2,7 @@
 % Please edit documentation in R/kruskal.scheffe.R
 \name{kruskal.scheffe}
 \alias{kruskal.scheffe}
-\title{Extended Kruskal-Wallis test followed by Scheffe's test
-R has kruskal.test originally. This function performs Kruskal-Wallis test followed by Scheffe's test.}
+\title{Extended Kruskal-Wallis test followed by Scheffe's test}
 \usage{
 kruskal.scheffe(data, group = NULL)
 }
@@ -13,7 +12,6 @@ kruskal.scheffe(data, group = NULL)
 \item{group}{group}
 }
 \description{
-Extended Kruskal-Wallis test followed by Scheffe's test
 R has kruskal.test originally. This function performs Kruskal-Wallis test followed by Scheffe's test.
 }
 \note{

@@ -2,8 +2,7 @@
 % Please edit documentation in R/desc.sum.R
 \name{desc.sum}
 \alias{desc.sum}
-\title{Calculation of summary statistics
-Calculating summary statistics}
+\title{Calculation of summary statistics}
 \usage{
 desc.sum(data)
 }
@@ -11,8 +10,7 @@ desc.sum(data)
 \item{data}{data}
 }
 \description{
-Calculation of summary statistics
-Calculating summary statistics
+This is a function to generate descriptive statistics of a variable.
 }
 \author{
 Yukiko Nishihama

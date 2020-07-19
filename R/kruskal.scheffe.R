@@ -1,4 +1,5 @@
 #' Extended Kruskal-Wallis test followed by Scheffe's test
+#'
 #' R has kruskal.test originally. This function performs Kruskal-Wallis test followed by Scheffe's test.
 #'
 #' @author Shoji F. Nakayama

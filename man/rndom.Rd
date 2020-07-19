@@ -2,8 +2,7 @@
 % Please edit documentation in R/rndom.R
 \name{rndom}
 \alias{rndom}
-\title{Random forest regression model
-Random forest regression model with 10-fold cross validation and external validation}
+\title{Random forest regression model}
 \usage{
 rndom(data, val, dp, Formula, N)
 }
@@ -19,7 +18,6 @@ rndom(data, val, dp, Formula, N)
 \item{N}{number of trees}
 }
 \description{
-Random forest regression model
 Random forest regression model with 10-fold cross validation and external validation
 }
 \author{

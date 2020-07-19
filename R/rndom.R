@@ -1,4 +1,5 @@
 #' Random forest regression model
+#'
 #' Random forest regression model with 10-fold cross validation and external validation
 #'
 #' @author Jung Chau-Ren
