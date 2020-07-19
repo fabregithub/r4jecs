@@ -6,7 +6,6 @@
 #'
 #' @param data data
 #'
-#' @importFrom psych describe
 #' @export
 #'
 

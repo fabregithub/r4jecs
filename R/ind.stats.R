@@ -11,8 +11,6 @@
 #' @param digits Number of digits under decimal point for mean and standard deviation
 #' @param output Output connection. Console as default.
 #'
-#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test complete.cases
-#'
 #' @examples
 #' Sex <- c(1,1,1,2,1,2,1,2,1,2,2,2,1,1,2,1,2,2,2,2,1,2,1,1,1,1,2,2,2,2)
 #' BS1 <- c(101.3,101.8,122.6,114.4,89.7,83.4,93.2,99.6,127.5,104.7,84.2,90.6,90,97.6,97.4,92.8,

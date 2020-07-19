@@ -6,7 +6,6 @@
 #'
 #' @param data data
 #'
-#' @importFrom tibble rownames_to_column
 #'
 #' @export
 #'

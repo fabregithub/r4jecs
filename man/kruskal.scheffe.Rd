@@ -31,6 +31,7 @@ x2 <- c(3.17, 3.63, 3.47, 3.44, 3.39)
 x3 <- c(3.64, 3.72, 3.91)
 kruskal.scheffe(list(x1,x2,x3))
 
+
 }
 \seealso{
 kruskal.test

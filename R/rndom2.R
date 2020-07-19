@@ -9,11 +9,6 @@
 #' @param Formula regression formula
 #' @param N number of trees
 #'
-#' @importFrom ranger ranger
-#' @importFrom parallel detectCores makeCluster stopCluster
-#' @importFrom utils tail
-#' @importFrom foreach foreach
-#' @importFrom doParallel registerDoParallel
 #'
 #' @export
 #'
