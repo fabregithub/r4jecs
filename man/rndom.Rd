@@ -7,18 +7,49 @@
 rndom(data, val, dp, Formula, N)
 }
 \arguments{
-\item{data}{data}
+\item{data}{Training data}
 
-\item{val}{data for external validation}
+\item{val}{Dataset for external validation}
 
-\item{dp}{dependent variable}
+\item{dp}{Dependent variable}
 
-\item{Formula}{regression formula}
+\item{Formula}{Defining the model to fit}
 
-\item{N}{number of trees}
+\item{N}{Number of trees}
+}
+\value{
+The function returns a list includes
+
+\item{\code{$best_vn}}{Selected variable through the recursive feature elimination algorithm}
+\item{\code{$best_mtry}}{mtry with the highest OOB \eqn{R^2}{R2}}
+\item{\code{$rf.af}}{Saved random forest model}
+\item{\code{$rp}}{Relative importance (\%) derived from permutation importance}
+\item{\code{$cv.r1}}{Dataset combined observed values and predicted values derived from the 10-fold cross-validation.}
+\item{\code{$ev}}{Dataset combined observed values and predicted values derived from the external validation.}
 }
 \description{
-Random forest regression model with 10-fold cross validation and external validation
+The function conducts random forest with the recursive feature elimination algorithm to fit the data and perform 10-fold cross-validation and external validation.
+}
+\details{
+The random forest algorithm is a collection of classification and regression trees that grow from each bootstrap dataset drew randomly from the original data.
+In each tree, variables are randomly selected for splitting at each node and the best split among those variables are chosen.
+The algorithm aggregates predictions from trees by majority voting for classification or averaging for regression, and calculate an out-of-bag (OOB, the data not drew in the bootstrap samples) error rate (Liaw and Wiener, 2002).
+
+The rndom function combines the random forest (a fast Implementation of random forests for high dimensional data by ranger package, Wright and Ziegler, 2017) with the recursive feature elimination (RFE) algorithm to deal with the collinearity problem and remove less relevant predictors (Gregorutti et al., 2013).
+The RFE algorithm consisted of: (1) training the random forest, and (2) calculating the permutation importance scores of variables and coefficient of determination (\eqn{R^2}{R2}) by OOB data, and (3) removing the less important variable.
+Step (1) to (3) were repeated until no further variable remained.
+The random forest with the RFE algorithm is first trained by including all predictors and set the number of predictors that randomly sampled for splitting at each node (mtry) as one third of the total number of predictors.
+The RFE algorithm iteratively removes predictors and calculates corresponding OOB \eqn{R^2}{R2}.
+The appropriate set of predictors was determined based on the highest OOB \eqn{R^2}{R2}.
+Once the set of predictors is determined, the mtry will be tuned from 1 to the total number of predictors and the mtry with the highest OOB \eqn{R^2}{R2} will be selected as the final model.
+Lastly the rndom function validates the model performance by using 10-fold cross validation and external validation, outputs a dataset combines observed values and predicted values.
+}
+\references{
+Liaw, A., Wiener, M., 2002. Classification and Regression by randomForest. R News 2/3, 18–22.
+
+Wright, M.N., Ziegler, A., 2017. ranger: A fast implementation of random forest for high dimensional data in C++ and R. Journal of Statistical Software 77, 1–17.
+
+Gregorutti, B., Michel, B., Saint-Pierre, P., 2013. Correlation and variable importance in random forests. Statistics and Computing 27, 1–31. DOI: 10.1007/s11222-016-9646-1
 }
 \author{
 Jung Chau-Ren
