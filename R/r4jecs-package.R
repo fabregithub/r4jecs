@@ -5,7 +5,7 @@
 #' @docType package
 #' @name r4jecs
 #'
-#' @import  NADA ranger foreach psych parallel tibble doParallel
+#' @import  NADA ranger foreach psych parallel tibble doParallel stringr
 #'
 #' @importFrom psych describe
 #' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq
@@ -16,6 +16,7 @@
 #' @importFrom parallel detectCores makeCluster stopCluster
 #' @importFrom foreach foreach
 #' @importFrom doParallel registerDoParallel
+#' @importFrom stringr str_replace
 #'
 #'
 NULL

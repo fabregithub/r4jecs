@@ -22,5 +22,6 @@ Imports:
     parallel,
     psych,
     tibble,
-    doParallel
+    doParallel,
+    stringr
 Language: en-GB
