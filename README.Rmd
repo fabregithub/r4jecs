@@ -8,7 +8,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
+  fig.path = "man/figures/README",
   out.width = "100%"
 )
 ```
@@ -16,25 +16,19 @@ knitr::opts_chunk$set(
 # r4jecs
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/fabregithub/r4jecs.svg?branch=master)](https://travis-ci.com/fabregithub/r4jecs)
 <!-- badges: end -->
 
 The goal of r4jecs is to gather and publish useful functions for data analysis in the Japan Environment and Children's Study (JECS)
 
 ## Installation
 
-You can install the released version of r4jecs from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("r4jecs")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version of r4jecs [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("fabregithub/r4jecs")
+devtools::install_github("fabregithub/GSimp4jecs")
 ```
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
