@@ -1,4 +1,25 @@
-library(ggplot2)
+#' Arashi colour palette
+#'
+#' This is to create Arashi colour palette for ggplot2
+#'
+#' @importFrom ggplot2
+#'
+#' @examples
+#' # Colour by discrete variable using default palette
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
+#'   geom_point(size = 4) +
+#'   scale_colour_arashi()
+#'
+#' # Colour by numeric variable with cool palette
+#' ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Sepal.Length)) +
+#'   geom_point(size = 4, alpha = .6) +
+#'   scale_colour_arashi(discrete = FALSE, palette = 'mj')
+#'
+#' # Fill by discrete variable with different palette + remove legend (guide)
+#' ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
+#'   geom_bar() +
+#'   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+#'   scale_fill_arashi(palette = 'arashi', guide = 'none')
 
 theme_set(theme_minimal())
 
@@ -62,7 +83,7 @@ arashi_colours <- c(
   ss_colours
 )
 
-#' Function to extract arashi colours as hex codes
+#' Function to extract Arashi colours as hex codes
 #'
 #' @param ... Character names of arashi_colours
 #'
@@ -86,7 +107,7 @@ arashi_palettes <- list(
   `arashi` = arashi_cols('mj0', 'os0', 'am0', 'nk0', 'ss0')
 )
 
-#' Return function to interpolate a arashi colour palette
+#' Return function to interpolate a Arashi colour palette
 #'
 #' @param palette Character name of palette in arashi_palettes
 #' @param reverse Boolean indicating whether the palette should be reversed
@@ -101,7 +122,7 @@ arashi_pal <- function(palette = 'arashi', reverse = FALSE, ...) {
 }
 arashi_pal('mj')(6)
 
-#' Colour scale constructor for arashi colours
+#' Colour scale constructor for Arashi colours
 #'
 #' @param palette Character name of palette in arashi_palettes
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
@@ -119,7 +140,7 @@ scale_colour_arashi <- function(palette = 'arashi', discrete = TRUE, reverse = F
   }
 }
 
-#' Fill scale constructor for arashi colours
+#' Fill scale constructor for Arashi colours
 #'
 #' @param palette Character name of palette in arashi_palettes
 #' @param discrete Boolean indicating whether colour aesthetic is discrete or not
@@ -136,22 +157,6 @@ scale_fill_arashi <- function(palette = 'arashi', discrete = TRUE, reverse = FAL
     scale_fill_gradientn(colours = pal(256), ...)
   }
 }
-
-# Colour by discrete variable using default palette
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
-  geom_point(size = 4) +
-  scale_colour_arashi()
-
-# Colour by numeric variable with cool palette
-ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Sepal.Length)) +
-  geom_point(size = 4, alpha = .6) +
-  scale_colour_arashi(discrete = FALSE, palette = 'mj')
-
-# Fill by discrete variable with different palette + remove legend (guide)
-ggplot(mpg, aes(manufacturer, fill = manufacturer)) +
-  geom_bar() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_fill_arashi(palette = 'arashi', guide = 'none')
 
 
 
