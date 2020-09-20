@@ -26,7 +26,7 @@
 #'
 
 nsf <- function(data, NSF, NBD){
-  res <- round(data, digits = NBD)
+  res <- round(as.numeric(data), digits = NBD)
   res <- signif(res, digits = NSF)
   res <- ifelse(res >= 1, formatC(res, digits = NSF, flag = '#', format = 'fg'), ifelse(res > 0, format(res, digits = NSF, nsmall = NBD, trim = TRUE), 0))
   res <- ifelse(grepl('\\.$', res), str_replace(res, '\\.', ''), res)
