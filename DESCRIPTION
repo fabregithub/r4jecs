@@ -20,8 +20,10 @@ Imports:
     ranger,
     foreach,
     parallel,
-    psych,
     tibble,
     doParallel,
-    stringr
+    stringr,
+    grDevices,
+    ggplot2,
+    psych
 Language: en-GB

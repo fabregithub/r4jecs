@@ -5,7 +5,7 @@
 #' @docType package
 #' @name r4jecs
 #'
-#' @import  NADA ranger foreach psych parallel tibble doParallel stringr
+#' @import  NADA ranger foreach parallel tibble doParallel stringr grDevices ggplot2
 #'
 #' @importFrom psych describe
 #' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq
@@ -17,6 +17,8 @@
 #' @importFrom foreach foreach
 #' @importFrom doParallel registerDoParallel
 #' @importFrom stringr str_replace
+#' @importFrom ggplot2 discrete_scale scale_color_gradientn discrete_scale scale_fill_gradientn
 #'
 #'
-NULL
+"_PACKAGE"
+
