@@ -37,7 +37,7 @@ pub.sum <- function (data, useNA = 'ifany') {
   else
     if (is.factor(data)) {
       res.1 <- table(data, useNA = useNA)
-      res.2 <- round(table(data, useNA = useNA) * 100 / (length(data) - sum(is.na(data))), 1)
+      res.2 <- round(table(data, useNA = useNA) * 100 / sum(table(data, useNA = useNA)), 1)
       res <- paste(res.1, ' (', res.2, ')', sep = '')
       res <- data.frame(Summary = res)
       res <- rownames_to_column(res)

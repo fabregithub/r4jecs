@@ -4,10 +4,12 @@
 \alias{pub.sum}
 \title{Generate summary statistics for publication}
 \usage{
-pub.sum(data)
+pub.sum(data, useNA = "ifany")
 }
 \arguments{
 \item{data}{data}
+
+\item{useNA}{optional argument to determine whether NA is counted in the table function}
 }
 \description{
 This is a function to generate publication ready summary statistics
