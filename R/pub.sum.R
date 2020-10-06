@@ -5,6 +5,7 @@
 #' @author Shoji F. Nakayama
 #'
 #' @param data data
+#' @param useNA optional argument to determine whether NA is counted in the table function
 #'
 #' @export
 #'
@@ -24,7 +25,7 @@
 
 
 ## Summary statistics for publication
-pub.sum <- function (data) {
+pub.sum <- function (data, useNA = TRUE) {
   if (is.numeric(data)) {
     res <- paste(round(median(data, na.rm = TRUE), 2),
                  ' (', round(quantile(data, 0.25, na.rm = TRUE)[[1]], 2), ', ',
@@ -35,7 +36,7 @@ pub.sum <- function (data) {
   }
   else
     if (is.factor(data)) {
-      res.1 <- table(data)
+      res.1 <- table(data, useNA = useNA)
       res.2 <- round(table(data) * 100 / length(data), 1)
       res <- paste(res.1, ' (', res.2, ')', sep = '')
       res <- data.frame(Summary = res)
