@@ -81,10 +81,10 @@ jecs_colours <- c(
 
 # Jecs colour palettes
 jecs_palettes <- list(
-  `mj` = jecs_cols('mj0', 'mj1', 'mj2', 'mj3', 'mj4', 'mj5'),
-  `os` = jecs_cols('os0', 'os1', 'os2', 'os3', 'os4', 'os5'),
   `am` = jecs_cols('am0', 'am1', 'am2', 'am3', 'am4', 'am5'),
+  `mj` = jecs_cols('mj0', 'mj1', 'mj2', 'mj3', 'mj4', 'mj5'),
   `nk` = jecs_cols('nk0', 'nk1', 'nk2', 'nk3', 'nk4', 'nk5'),
+  `os` = jecs_cols('os0', 'os1', 'os2', 'os3', 'os4', 'os5'),
   `ss` = jecs_cols('ss0', 'ss1', 'ss2', 'ss3', 'ss4', 'ss5'),
-  `jecs` = jecs_cols('mj0', 'os0', 'am0', 'nk0', 'ss0')
+  `jecs` = jecs_cols('am0', 'mj0', 'nk0', 'os0', 'ss0')
 )
