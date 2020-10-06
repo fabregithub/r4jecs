@@ -25,7 +25,7 @@
 
 
 ## Summary statistics for publication
-pub.sum <- function (data, useNA = TRUE) {
+pub.sum <- function (data, useNA = 'ifany') {
   if (is.numeric(data)) {
     res <- paste(round(median(data, na.rm = TRUE), 2),
                  ' (', round(quantile(data, 0.25, na.rm = TRUE)[[1]], 2), ', ',
@@ -37,7 +37,7 @@ pub.sum <- function (data, useNA = TRUE) {
   else
     if (is.factor(data)) {
       res.1 <- table(data, useNA = useNA)
-      res.2 <- round(table(data) * 100 / length(data), 1)
+      res.2 <- round(table(data, useNA = useNA) * 100 / length(data), 1)
       res <- paste(res.1, ' (', res.2, ')', sep = '')
       res <- data.frame(Summary = res)
       res <- rownames_to_column(res)
