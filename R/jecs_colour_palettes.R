@@ -6,6 +6,9 @@
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
+#' @export
+#'
+#'
 
 
 # Return function to interpolate a Jecs colour palette

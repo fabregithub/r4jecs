@@ -19,3 +19,17 @@ scale_color_gradientn(), used respectively when discrete is TRUE or FALSE}
 \description{
 Colour scale constructor for Jecs colours
 }
+\examples{
+library(ggplot2)
+# Colour by discrete variable using default palette
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species)) +
+  geom_point(size = 4) +
+  scale_colour_jecs()
+
+# Colour by numeric variable with cool palette
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Sepal.Length)) +
+  geom_point(size = 4, alpha = .6) +
+  scale_colour_jecs(discrete = FALSE, palette = 'mj')
+
+
+}

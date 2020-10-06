@@ -5,6 +5,10 @@
 #'
 #' @param ... Character names of jecs_colours
 #'
+#' @export
+#'
+#'
+#'
 
 jecs_cols <- function(...) {
   cols <- c(...)
