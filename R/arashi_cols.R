@@ -1,21 +1,21 @@
-#' Function to extract Arashi colours as hex codes
+#' Function to extract Jecs colours as hex codes
 #'
-#' This is to create Arashi colour palette for ggplot2. First a function to
-#' extract Arashi colours as hex codes
+#' This is to create Jecs colour palette for ggplot2. First a function to
+#' extract Jecs colours as hex codes
 #'
-#' @param ... Character names of arashi_colours
+#' @param ... Character names of jecs_colours
 #'
 
-arashi_cols <- function(...) {
+jecs_cols <- function(...) {
   cols <- c(...)
 
   if (is.null(cols))
-    return (arashi_colours)
+    return (jecs_colours)
 
-  arashi_colours[cols]
+  jecs_colours[cols]
 }
 
-# Arashi colours
+# Jecs colours
 # https://www.colordic.org/w
 # https://www.colordic.org/colorscheme/2391
 mj_colours <- c(
@@ -67,7 +67,7 @@ ss_colours <- c(
   `ss5` = '#d6abb7'
 )
 
-arashi_colours <- c(
+jecs_colours <- c(
   mj_colours,
   os_colours,
   nk_colours,
@@ -75,12 +75,12 @@ arashi_colours <- c(
   ss_colours
 )
 
-# Arashi colour palettes
-arashi_palettes <- list(
-  `mj` = arashi_cols('mj0', 'mj1', 'mj2', 'mj3', 'mj4', 'mj5'),
-  `os` = arashi_cols('os0', 'os1', 'os2', 'os3', 'os4', 'os5'),
-  `am` = arashi_cols('am0', 'am1', 'am2', 'am3', 'am4', 'am5'),
-  `nk` = arashi_cols('nk0', 'nk1', 'nk2', 'nk3', 'nk4', 'nk5'),
-  `ss` = arashi_cols('ss0', 'ss1', 'ss2', 'ss3', 'ss4', 'ss5'),
-  `arashi` = arashi_cols('mj0', 'os0', 'am0', 'nk0', 'ss0')
+# Jecs colour palettes
+jecs_palettes <- list(
+  `mj` = jecs_cols('mj0', 'mj1', 'mj2', 'mj3', 'mj4', 'mj5'),
+  `os` = jecs_cols('os0', 'os1', 'os2', 'os3', 'os4', 'os5'),
+  `am` = jecs_cols('am0', 'am1', 'am2', 'am3', 'am4', 'am5'),
+  `nk` = jecs_cols('nk0', 'nk1', 'nk2', 'nk3', 'nk4', 'nk5'),
+  `ss` = jecs_cols('ss0', 'ss1', 'ss2', 'ss3', 'ss4', 'ss5'),
+  `jecs` = jecs_cols('mj0', 'os0', 'am0', 'nk0', 'ss0')
 )
