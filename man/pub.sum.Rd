@@ -7,26 +7,12 @@
 pub.sum(data, useNA = "ifany")
 }
 \arguments{
-\item{data}{data}
+\item{data}{data only containing measurement data and censoring information}
 
 \item{useNA}{optional argument to determine whether NA is counted in the table function}
 }
 \description{
 This is a function to generate publication ready summary statistics
-}
-\examples{
-dat <- data.frame(x = c(10, 13, 14, 8, 9, 12), y = c('boy', 'girl', 'girl', 'girl', 'boy', 'girl'))
-dat$y <- as.factor(dat$y)
-
-fname <- 'filename.csv' # Set output file name
-if (file.exists(fname)) file.remove(fname) # Delete the file if exists
-
-for (i in 1:ncol(dat)) {
-  a <- pub.sum(dat[, i])
-  colnames(a) <- c(names(dat[i]), 'Summary')
-  write.table(a, file = fname, sep = ',', row.names = FALSE, col.names = TRUE, append = TRUE)
-}
-
 }
 \author{
 Shoji F. Nakayama

@@ -4,12 +4,10 @@
 \alias{nada.sum}
 \title{NADA summary}
 \usage{
-nada.sum(data, cen)
+nada.sum(data)
 }
 \arguments{
-\item{data}{data}
-
-\item{cen}{indicator for censor}
+\item{data}{data only containing measurement data and censoring information}
 }
 \description{
 This is a function to calculate NADA summary statistics

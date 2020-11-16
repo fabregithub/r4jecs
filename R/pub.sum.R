@@ -4,44 +4,41 @@
 #'
 #' @author Shoji F. Nakayama
 #'
-#' @param data data
+#' @param data data only containing measurement data and censoring information
 #' @param useNA optional argument to determine whether NA is counted in the table function
 #'
 #' @export
-#'
-#' @examples
-#' dat <- data.frame(x = c(10, 13, 14, 8, 9, 12), y = c('boy', 'girl', 'girl', 'girl', 'boy', 'girl'))
-#' dat$y <- as.factor(dat$y)
-#'
-#' fname <- 'filename.csv' # Set output file name
-#' if (file.exists(fname)) file.remove(fname) # Delete the file if exists
-#'
-#' for (i in 1:ncol(dat)) {
-#'   a <- pub.sum(dat[, i])
-#'   colnames(a) <- c(names(dat[i]), 'Summary')
-#'   write.table(a, file = fname, sep = ',', row.names = FALSE, col.names = TRUE, append = TRUE)
-#' }
 #'
 
 
 ## Summary statistics for publication
 pub.sum <- function (data, useNA = 'ifany') {
-  if (is.numeric(data)) {
-    res <- paste(round(median(data, na.rm = TRUE), 2),
-                 ' (', round(quantile(data, 0.25, na.rm = TRUE)[[1]], 2), ', ',
-                 round(quantile(data, 0.75, na.rm = TRUE)[[1]], 2), ')', sep = '')
-    res <- data.frame(Summary = res)
-    res <- rownames_to_column(res)
-    return(res)
-  }
-  else
-    if (is.factor(data)) {
-      res.1 <- table(data, useNA = useNA)
-      res.2 <- round(table(data, useNA = useNA) * 100 / sum(table(data, useNA = useNA)), 1)
-      res <- paste(res.1, ' (', res.2, ')', sep = '')
-      res <- data.frame(Summary = res)
+  result <- list()
+  N <- ncol(data)
+  for(i in 1:N) {
+    if (is.numeric(data[, i])) {
+      res <- paste(round(median(data[, i], na.rm = TRUE), 2),
+                   ' (', round(quantile(data[, i], 0.25, na.rm = TRUE)[[1]], 2), ', ',
+                   round(quantile(data[, i], 0.75, na.rm = TRUE)[[1]], 2), ')', sep = '')
+      res <- data.frame(res)
       res <- rownames_to_column(res)
-      return(res)
+      colnames(res) <- c('Variable', 'Median (95% CI)')
+      res[1, 1] <- names(data)[i]
+      result[[i]] <- res
     }
-  else print('The variable is neither numeric nor factor.')
+    else
+      if (is.factor(data[, i])) {
+        res.1 <- table(data[, i], useNA = useNA)
+        res.2 <- round(table(data[, i], useNA = useNA) * 100 / sum(table(data[, i], useNA = useNA)), 1)
+        res <- paste(res.1, ' (', res.2, ')', sep = '')
+        res <- data.frame(res)
+        res <- rownames_to_column(res)
+        colnames(res) <- c('Item', 'Count (%)')
+        res[, 1] <- names(res.1)
+        result[[i]] <- res
+      }
+    else
+      result[[i]] <- 'The variable is neither numeric nor factor.'
+  }
+  return(result)
 }
