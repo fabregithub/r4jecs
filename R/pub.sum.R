@@ -33,7 +33,7 @@ pub.sum <- function (data, useNA = 'ifany') {
         res <- paste(res.1, ' (', res.2, ')', sep = '')
         res <- data.frame(res)
         res <- rownames_to_column(res)
-        colnames(res) <- c('Item', 'Count (%)')
+        colnames(res) <- c(names(data)[i], 'Count (%)')
         res[, 1] <- names(res.1)
         result[[i]] <- res
       }
