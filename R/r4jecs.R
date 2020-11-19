@@ -5,19 +5,21 @@
 #' @docType package
 #' @name r4jecs
 #'
-#' @import  NADA ranger foreach parallel tibble doParallel stringr grDevices ggplot2
+# @import  NADA ranger foreach parallel tibble doParallel stringr grDevices ggplot2
+#' @import  grDevices
 #'
 #' @importFrom psych describe
-#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq
+#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq sd quantile median predict
 #' @importFrom utils combn tail
 #' @importFrom NADA cenfit censummary
 #' @importFrom tibble rownames_to_column
 #' @importFrom ranger ranger
 #' @importFrom parallel detectCores makeCluster stopCluster
-#' @importFrom foreach foreach
+#' @importFrom foreach foreach %dopar%
 #' @importFrom doParallel registerDoParallel
 #' @importFrom stringr str_replace
 #' @importFrom ggplot2 discrete_scale scale_color_gradientn discrete_scale scale_fill_gradientn
+#'
 #'
 #'
 "_PACKAGE"

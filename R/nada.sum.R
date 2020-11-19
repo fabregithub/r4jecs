@@ -6,7 +6,6 @@
 #'
 #' @param data data only containing measurement data and censoring information
 #'
-#'
 #' @export
 #'
 #'
@@ -41,6 +40,6 @@ nada.sum <- function (data) {
     colnames(res[[i]]) <- clname
   }
   result <- as.data.frame(res)
-  result <- result %>% rownames_to_column(var = 'Summary')
+  result <- rownames_to_column(result, var = 'Summary')
   return(result)
 }
