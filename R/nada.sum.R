@@ -44,4 +44,3 @@ nada.sum <- function (data) {
   result <- result %>% rownames_to_column(var = 'Summary')
   return(result)
 }
-
