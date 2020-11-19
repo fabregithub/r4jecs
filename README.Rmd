@@ -26,7 +26,7 @@ You can install the development version of r4jecs [GitHub](https://github.com/) 
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("fabregithub/GSimp4jecs")
+devtools::install_github("fabregithub/r4jecs")
 ```
 
 ## Example
