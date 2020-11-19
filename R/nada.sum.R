@@ -36,7 +36,7 @@ nada.sum <- function (data) {
                         Mean = nsf(result$mean[1], 3, 2),
                         SD = nsf(result$sd, 3, 2),
                         GM = nsf(result$gm, 3, 2),
-                        GSD = nsf(result$gsd3, 2))
+                        GSD = nsf(result$gsd, 3, 2))
     res[[i]] <- t(res.0)
     colnames(res[[i]]) <- clname
   }
