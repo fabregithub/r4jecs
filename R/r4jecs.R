@@ -5,11 +5,10 @@
 #' @docType package
 #' @name r4jecs
 #'
-#'
 #' @importFrom psych describe
 #' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq sd quantile median predict
 #' @importFrom utils combn tail
-#' @importFrom NADA cenfit censummary flip
+#' @importFrom NADA cenfit censummary
 #' @importFrom tibble rownames_to_column
 #' @importFrom ranger ranger
 #' @importFrom parallel detectCores makeCluster stopCluster
