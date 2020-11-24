@@ -15,10 +15,11 @@ nada.sum <- function (data) {
   res <- list()
   for (i in 1:N) {
     clname <- names(data)[2 * i - 1]
-    cn.cen <- paste(clname, 'cen', sep = '.')
-    cf.res <- cenfit(data[, clname], data[, cn.cen])
-    cf.summary <- censummary(data[, clname], data[, cn.cen])
-    l.cf.res <- cenfit(log10(data[, clname]), data[, cn.cen])
+    d1 <- data[, 2 * i - 1]
+    d2 <- data[, 2 * i]
+    cf.res <- cenfit(d1, d2)
+    cf.summary <- censummary(d1, d2)
+    l.cf.res <- cenfit(log10(d1), d2)
     result <- list(summary = cf.summary, mean = mean(cf.res),
                    sd = sd(cf.res), quantile = quantile(cf.res), gm = 10^mean(l.cf.res)[1],
                    gsd = 10^sd(l.cf.res))
