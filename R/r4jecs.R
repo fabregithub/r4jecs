@@ -6,7 +6,7 @@
 #' @name r4jecs
 #'
 #' @importFrom psych describe
-#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq sd quantile median predict
+#' @importFrom stats complete.cases var.test t.test wilcox.test bartlett.test oneway.test kruskal.test pchisq sd quantile median predict na.omit
 #' @importFrom utils combn tail
 #' @importFrom NADA cenfit censummary
 #' @importFrom tibble rownames_to_column

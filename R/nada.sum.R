@@ -15,11 +15,11 @@ nada.sum <- function (data) {
   res <- list()
   for (i in 1:N) {
     clname <- names(data)[2 * i - 1]
-    d1 <- data[, 2 * i - 1]
-    d2 <- data[, 2 * i]
-    cf.res <- cenfit(d1, d2)
-    cf.summary <- censummary(d1, d2)
-    l.cf.res <- cenfit(log10(d1), d2)
+    d1 <- na.omit(data[, 2 * i - 1])
+    d2 <- na.omit(data[, 2 * i])
+    cf.res <- NADA::cenfit(d1, d2)
+    cf.summary <- NADA::censummary(d1, d2)
+    l.cf.res <- NADA::cenfit(log10(d1), d2)
     result <- list(summary = cf.summary, mean = mean(cf.res),
                    sd = sd(cf.res), quantile = quantile(cf.res), gm = 10^mean(l.cf.res)[1],
                    gsd = 10^sd(l.cf.res))
@@ -37,11 +37,11 @@ nada.sum <- function (data) {
                         SD = nsf(result$sd, 3, 2),
                         GM = nsf(result$gm, 3, 2),
                         GSD = nsf(result$gsd, 3, 2)
-                        )
+    )
     res[[i]] <- t(res.0)
     colnames(res[[i]]) <- clname
   }
   result <- as.data.frame(res)
-  result <- rownames_to_column(result, var = 'Summary')
+  result <- tibble::rownames_to_column(result, var = 'Summary')
   return(result)
 }
