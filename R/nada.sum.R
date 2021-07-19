@@ -15,8 +15,8 @@ nada.sum <- function (data) {
   res <- list()
   for (i in 1:N) {
     clname <- names(data)[2 * i - 1]
-    d1 <- na.omit(data[, 2 * i - 1])
-    d2 <- na.omit(data[, 2 * i])
+    d1 <- na.omit(data[, 2 * i - 1]) # remove NA
+    d2 <- na.omit(data[, 2 * i]) # remove NA
     cf.res <- NADA::cenfit(d1, d2)
     cf.summary <- NADA::censummary(d1, d2)
     l.cf.res <- NADA::cenfit(log10(d1), d2)
