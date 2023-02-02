@@ -1,4 +1,4 @@
-#' Number of significant figures and number below decimal point
+#' Number of significant figures
 #'
 #' Set the number of significant figures.
 #'
@@ -21,8 +21,8 @@
 #'
 
 nsf2 <- function(data, digits) {
-  z <- ifelse(data >= 10,
-         formatC(signif(data, digits), digits = digits,
-                 format = 'fg', flag = '#', drop0trailing = TRUE), formatC(data, digits = digits, format = 'g', flag = '#'))
-  return(z)
+  res <- ifelse(data >= 10,
+                formatC(signif(data, digits), digits = digits, format = 'fg', flag = '#', drop0trailing = TRUE),
+                formatC(data, digits = digits, format = 'g', flag = '#'))
+  return(res)
 }
