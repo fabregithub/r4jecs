@@ -1,6 +1,6 @@
 #' r4jecs
 #'
-#' This is a package used in JECS project.
+#' These is a package used in JECS project.
 #'
 #' @docType package
 #' @name r4jecs
