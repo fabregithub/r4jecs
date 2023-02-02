@@ -21,8 +21,9 @@
 #'
 
 nsf2 <- function(data, digits) {
-  res <- ifelse(data >= 10,
-                formatC(signif(data, digits), digits = digits, format = 'fg', flag = '#', drop0trailing = TRUE),
-                formatC(data, digits = digits, format = 'g', flag = '#'))
+  res <- ifelse(data == 0, '0',
+                ifelse(data >= 10,
+                       formatC(signif(data, digits), digits = digits, format = 'fg', flag = '#', drop0trailing = TRUE),
+                       formatC(data, digits = digits, format = 'g', flag = '#')))
   return(res)
 }
