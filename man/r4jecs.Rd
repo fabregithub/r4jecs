@@ -6,7 +6,7 @@
 \alias{r4jecs-package}
 \title{r4jecs}
 \description{
-This is a package used in JECS project.
+These is a package used in JECS project.
 }
 \author{
 \strong{Maintainer}: Shoji Nakayama \email{fabre@nies.go.jp}
