@@ -7,8 +7,7 @@
 #' @author Shoji F. Nakayama
 #'
 #' @param data data
-#' @param NSF Number of significant figures
-#' @param NBD Number below decimal point
+#' @param digits Number of significant figures
 #'
 #' @examples
 #' \dontrun{
