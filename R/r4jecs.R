@@ -17,6 +17,7 @@
 #' @importFrom stringr str_replace
 #' @importFrom ggplot2 discrete_scale scale_color_gradientn discrete_scale scale_fill_gradientn
 #' @importFrom grDevices colorRampPalette
+#' @importFrom gtools logit
 #'
 #'
 #'
