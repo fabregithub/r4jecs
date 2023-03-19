@@ -18,7 +18,7 @@
 #'
 #'
 
-rope_llogit <- function(prevalence, change = 0.05) {
+rope_logit <- function(prevalence, change = 0.05) {
   res <- c(-(gtools::logit(prevalence + prevalence * change)-gtools::logit(prevalence - prevalence * change))/4,(gtools::logit(prevalence + prevalence * change)-gtools::logit(prevalence - prevalence * change))/4)
   return(res)
 }

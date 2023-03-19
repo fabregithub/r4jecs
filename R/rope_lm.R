@@ -21,4 +21,3 @@ rope_lm <- function(y) {
   res <- c((-0.1 * sd(y)), (0.1 * sd(y)))
   return(res)
 }
-

@@ -20,6 +20,5 @@
 #' @importFrom gtools logit
 #'
 #'
-#'
 "_PACKAGE"
 
