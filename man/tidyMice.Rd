@@ -17,32 +17,41 @@ This function is used to tidy miceRanger imputation results
 }
 \examples{
 \dontrun{
-library(miceRange)
-n.core <- detectCores()
-cl <- makeCluster(n.core / 2)
+require(r4jecs)
+require(tidyverse)
+require(miceRanger)
+require(doParallel)
+
+set.seed(9973)
+
+# Load data
+data(iris)
+
+# Ampute the data. iris contains no missing values by default.
+ampIris <- amputeData(iris,perc=0.25)
+head(ampIris,10)
+
+# Set up back ends.
+cl <- makeCluster(2)
 registerDoParallel(cl)
 
-df <- readRDS("data.rds")
-set.seed(12345)
-mice.res <- miceRanger(
-  df,
-  m = 17,
-  maxiter = 10,
+# Perform mice
+miceObjPar <- miceRanger(
+  ampIris,
+  m = 6,
   parallel = TRUE,
-  returnModels = TRUE,
   verbose = FALSE
-  )
-
+)
 stopCluster(cl)
 registerDoSEQ()
 
-imp <- completeData(mice.res)
+imp <- completeData(miceObjPar)
+imp <- tidyMice(imp)
+df.imp <- imp \%>\% group_by(.id) \%>\% summarise_at(.vars = names(.)[3:ncol(imp)], .funs = 'mjvote')
 
-df2 <- tidyMice(imp)
-df3 <- df2 \%>\% group_by(.id) \%>\% summarise_at(.vars = names(.)[3:ncols(df2)], .funs = 'mjvote')
-df3 <- cbind(data.frame(df[, 1]), df3)
-colnames(df3)[1] <- "ID"
-df3 <- df3[, -2]
+df.imp <- cbind(data.frame(ampIris[, 1]), df.imp)
+colnames(df.imp)[1] <- "ID"
+df.imp <- df.imp[, -2]
 }
 
 }
