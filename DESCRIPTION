@@ -26,5 +26,7 @@ Imports:
     grDevices,
     ggplot2,
     psych,
-    gtools
+    gtools,
+    data.table,
+    tidyr
 Language: en-GB
