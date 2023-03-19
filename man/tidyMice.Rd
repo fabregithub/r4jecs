@@ -39,7 +39,7 @@ registerDoSEQ()
 imp <- completeData(mice.res)
 
 df2 <- tidyMice(imp)
-df3 <- df2 \%>\% group_by(.id) \%>\% summarise_at(.vars = names(.)[3:ncols(df2)], .funs = 'getmode')
+df3 <- df2 \%>\% group_by(.id) \%>\% summarise_at(.vars = names(.)[3:ncols(df2)], .funs = 'mjvote')
 df3 <- cbind(data.frame(df[, 1]), df3)
 colnames(df3)[1] <- "ID"
 df3 <- df3[, -2]
