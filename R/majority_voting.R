@@ -10,7 +10,6 @@
 #'
 #' @examples
 #' \dontrun{
-#' require(r4jecs)
 #' require(tidyverse)
 #' require(miceRanger)
 #' require(doParallel)
@@ -21,8 +20,9 @@
 #' data(iris)
 #'
 #' # Ampute the data. iris contains no missing values by default.
-#' ampIris <- amputeData(iris,perc=0.25)
-#' head(ampIris,10)
+#' ampIris <- amputeData(iris, perc = 0.25)
+#' head(ampIris, 10)
+#' summary(ampIris)
 #'
 #' # Set up back ends.
 #' cl <- makeCluster(2)
@@ -41,10 +41,9 @@
 #' imp <- completeData(miceObjPar)
 #' imp <- tidyMice(imp)
 #' df.imp <- imp %>% group_by(.id) %>% summarise_at(.vars = names(.)[3:ncol(imp)], .funs = 'mjvote')
+#' df.imp <- df.imp[, -1]
 #'
-#' df.imp <- cbind(data.frame(ampIris[, 1]), df.imp)
-#' colnames(df.imp)[1] <- "ID"
-#' df.imp <- df.imp[, -2]
+#' summary(df.imp)
 #' }
 #'
 #' @export
