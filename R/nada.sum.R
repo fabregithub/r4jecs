@@ -20,8 +20,11 @@ nada.sum <- function (data) {
     cf.res <- NADA::cenfit(d1, d2)
     cf.summary <- NADA::censummary(d1, d2)
     l.cf.res <- NADA::cenfit(log10(d1), d2)
-    result <- list(summary = cf.summary, mean = mean(cf.res),
-                   sd = sd(cf.res), quantile = quantile(cf.res), gm = 10^mean(l.cf.res)[1],
+    result <- list(summary = cf.summary,
+                   mean = mean(cf.res),
+                   sd = sd(cf.res),
+                   quantile = quantile(cf.res),
+                   gm = 10^mean(l.cf.res)[1],
                    gsd = 10^sd(l.cf.res))
     res.0 <- data.frame(N = result$summary$all[1],
                         N.censored = result$summary$all[2],
@@ -41,7 +44,7 @@ nada.sum <- function (data) {
     res[[i]] <- t(res.0)
     colnames(res[[i]]) <- clname
   }
-  result <- as.data.frame(res)
+  result <- data.frame(res)
   result <- tibble::rownames_to_column(result, var = 'Summary')
   return(result)
 }
