@@ -48,3 +48,4 @@ nada.sum <- function (data) {
   result <- tibble::rownames_to_column(result, var = 'Summary')
   return(result)
 }
+
