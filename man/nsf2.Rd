@@ -2,7 +2,7 @@
 % Please edit documentation in R/nsf2.R
 \name{nsf2}
 \alias{nsf2}
-\title{Number of significant figures}
+\title{Number of significant figures 2}
 \usage{
 nsf2(data, digits)
 }

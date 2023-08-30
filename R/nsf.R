@@ -1,4 +1,4 @@
-#' Number of significant figures and number below decimal point
+#' Number of significant figures and number below decimal point, general
 #'
 #' Take care of the number of significant figures (NSF) and number below decimal point with the following criteria (NBD).
 #'

@@ -1,4 +1,4 @@
-#' Number of significant figures
+#' Number of significant figures 2
 #'
 #' Set the number of significant figures.
 #'
