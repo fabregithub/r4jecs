@@ -14,7 +14,7 @@
 #' \dontrun{
 #' for (i in 1:nrow(df)) {
 #'   df$column[i] <- rpick(N, df$column[i], model)
-#' }
+#' }}
 #'
 #' @export
 #'

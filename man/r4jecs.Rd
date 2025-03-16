@@ -2,8 +2,8 @@
 % Please edit documentation in R/r4jecs.R
 \docType{package}
 \name{r4jecs}
-\alias{r4jecs}
 \alias{r4jecs-package}
+\alias{r4jecs}
 \title{r4jecs}
 \description{
 These is a package used in JECS project.

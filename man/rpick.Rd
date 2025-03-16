@@ -19,6 +19,13 @@ Random picking of values from fitted distribution.
 \details{
 This function picks a value randomly from a fitted distribution.
 }
+\examples{
+\dontrun{
+for (i in 1:nrow(df)) {
+  df$column[i] <- rpick(N, df$column[i], model)
+}}
+
+}
 \author{
 Shoji F. Nakayama
 }

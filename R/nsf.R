@@ -28,7 +28,13 @@
 #'
 
 nsf <- function(data, NSF, NBD){
-  res <- round(as.numeric(data), digits = NBD)
+  # subfunction
+    round_half_up <- function(x, digits) {
+      shift <- 10^digits
+      return (floor(x * shift + 0.5) / shift)
+    }
+# main function
+  res <- round_half_up(as.numeric(data), digits = NBD)
   res <- signif(res, digits = NSF)
   res <- ifelse(res >= 1, formatC(res, digits = NSF, flag = '#', format = 'fg'), ifelse(res > 0, format(res, digits = NSF, nsmall = NBD, trim = TRUE), 0))
   res <- ifelse(grepl('\\.$', res), str_replace(res, '\\.', ''), res)
