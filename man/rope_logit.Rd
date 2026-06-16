@@ -2,27 +2,34 @@
 % Please edit documentation in R/rope_logit.R
 \name{rope_logit}
 \alias{rope_logit}
-\title{ROPE range calculation for a logistic model}
+\title{ROPE range for a logistic model}
 \usage{
-rope_logit(prevalence, change = 0.05)
+rope_logit(prevalence, change = 0.05, relative = TRUE)
 }
 \arguments{
-\item{prevalence}{prevalence of binomial y variance = 1}
+\item{prevalence}{Baseline prevalence. Must be a single number between 0 and
+1, exclusive.}
 
-\item{change}{tolerable range}
+\item{change}{Tolerable change in prevalence. The default is \code{0.05}.}
+
+\item{relative}{Logical. If \code{TRUE}, \code{change} is interpreted as a relative
+change. If \code{FALSE}, \code{change} is interpreted as an absolute probability
+difference.}
+}
+\value{
+A named numeric vector with elements \code{lower} and \code{upper}.
 }
 \description{
-Calculation of ROPE range for a logistic model.
+Calculate a region of practical equivalence (ROPE) on the logit scale from a
+baseline prevalence and a tolerable change in prevalence.
 }
 \details{
-This function calculates the ROPE range for a logistic model.
+By default, \code{change} is interpreted as a relative change. For example,
+\code{prevalence = 0.3} and \code{change = 0.05} use the probability range
+\code{0.3 * (1 - 0.05)} to \code{0.3 * (1 + 0.05)}.
 }
 \examples{
-\dontrun{
-rope.logit <- rope_llogit(0.3, 0.05)
-}
+rope_logit(0.3, 0.05)
+rope_logit(0.3, 0.02, relative = FALSE)
 
-}
-\author{
-Shoji F. Nakayama
 }

@@ -4,26 +4,156 @@
 # r4jecs
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of r4jecs is to gather and publish useful functions for data
-analysis in the Japan Environment and Children’s Study (JECS)
+`r4jecs` is a small utility package for data analysis workflows used in
+the Japan Environment and Children’s Study (JECS). The current version
+focuses on a small set of reusable helpers for censored environmental
+data summaries, significant-figure formatting, and ROPE ranges for
+regression models.
+
+Older imputation and majority-voting helpers have been retired. For
+multiple imputation workflows, use the generic MI/brms pipeline instead:
+<https://github.com/fabregithub/generic-mi-brms-pipeline>.
 
 ## Installation
 
-You can install the development version of r4jecs
-[GitHub](https://github.com/) with:
+You can install the development version of `r4jecs` from GitHub with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("fabregithub/r4jecs")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+Then load the package:
 
 ``` r
 library(r4jecs)
-## basic example code
+```
+
+## Main functions
+
+| Function | Purpose |
+|----|----|
+| `nada_summary()` | Summarise paired measurement/censoring columns using `NADA` |
+| `format_sigfig()` | Format numeric values using significant figures |
+| `rope_lm()` | Calculate a ROPE range for linear-model coefficients |
+| `rope_logit()` | Calculate a ROPE range for logistic-model coefficients |
+
+Backward-compatible wrappers are kept for older scripts:
+
+| Old function | Preferred function |
+|--------------|--------------------|
+| `nada.sum()` | `nada_summary()`   |
+| `nsf()`      | `format_sigfig()`  |
+| `nsf2()`     | `format_sigfig()`  |
+
+The retired functions `mjvote()` and `tidyMice()` are deprecated and now
+stop with a message pointing users to the newer workflow.
+
+## Summarising censored environmental measurements
+
+`nada_summary()` expects alternating columns of measurement values and
+censoring indicators:
+
+``` r
+exposure_data <- data.frame(
+  lead = c(0.10, 0.20, 0.05, 0.40, 0.12),
+  lead_censored = c(FALSE, FALSE, TRUE, FALSE, TRUE),
+  cadmium = c(0.01, 0.03, 0.02, 0.04, 0.01),
+  cadmium_censored = c(TRUE, FALSE, FALSE, FALSE, TRUE)
+)
+
+nada_summary(exposure_data)
+```
+
+The expected column order is:
+
+``` text
+measurement_1, censored_1, measurement_2, censored_2, ...
+```
+
+The censoring column should indicate whether each observation is
+censored, for example whether the value is below the limit of detection.
+Rows with missing measurement or censoring values are removed pairwise
+so that measurements and censoring flags remain aligned.
+
+The old function name still works, but new code should use
+`nada_summary()`:
+
+``` r
+nada.sum(exposure_data)
+```
+
+## Formatting numbers
+
+Use `format_sigfig()` to format numeric values for tables and reports:
+
+``` r
+format_sigfig(c(0.012345, 1.2345, 123.45), sigfig = 3)
+
+format_sigfig(c(0.012345, 1.2345, 123.45), sigfig = 3, digits = 2)
+```
+
+The old helpers are retained as wrappers:
+
+``` r
+nsf(c(0.012345, 1.2345, 123.45), NSF = 3, NBD = 2)
+nsf2(c(0.012345, 1.2345, 123.45), digits = 3)
+```
+
+## ROPE ranges
+
+`rope_lm()` returns a symmetric ROPE range for linear-model
+coefficients. By default, the range is plus or minus 0.1 standard
+deviations of the outcome.
+
+``` r
+y <- c(1.2, 2.0, 2.4, 3.1, 4.0)
+
+rope_lm(y)
+```
+
+`rope_logit()` returns a symmetric ROPE range on the logit scale. By
+default, `change` is interpreted as a relative change around the
+supplied prevalence.
+
+``` r
+rope_logit(prevalence = 0.20, change = 0.05)
+```
+
+For an absolute probability change instead, use `relative = FALSE`:
+
+``` r
+rope_logit(prevalence = 0.20, change = 0.01, relative = FALSE)
+```
+
+## Deprecated functions
+
+The following functions are intentionally deprecated:
+
+``` r
+mjvote()
+tidyMice()
+```
+
+They are kept only to provide a clear error message for older scripts.
+New work should use the generic MI/brms pipeline:
+<https://github.com/fabregithub/generic-mi-brms-pipeline>.
+
+## Development
+
+After editing roxygen comments or changing package dependencies,
+regenerate the package documentation and `NAMESPACE` locally:
+
+``` r
+devtools::document()
+devtools::check()
+```
+
+To regenerate `README.md` from this file:
+
+``` r
+devtools::build_readme()
 ```

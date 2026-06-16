@@ -11,22 +11,13 @@ Description: This is a package used in the Japan Environment and Children's Stud
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
-Suggests: 
-    testthat
 Imports:
-    NADA,
-    ranger,
-    foreach,
-    parallel,
-    tibble,
-    doParallel,
-    stringr,
-    grDevices,
-    ggplot2,
-    psych,
-    gtools,
-    data.table,
-    tidyr
+    lifecycle,
+    methods,
+    NADA
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Language: en-GB
+Config/roxygen2/version: 8.0.0
